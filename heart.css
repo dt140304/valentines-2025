@@ -1,0 +1,75 @@
+
+    
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: plum;
+    font-family: Arial, sans-serif;
+}
+
+/* Create the heart shape */
+#heart {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: red;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#heart::before, #heart::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+#heart::before {
+    left: -100px;
+}
+
+#heart::after {
+    top: -100px;
+}
+
+#heart span {
+    z-index: 1;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    transform: rotate(-45deg); /* Keep the text upright */
+    padding: 10px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+/* Responsive adjustments for screens up to 1200px wide */
+@media screen and (max-width: 1200px) {
+    #heart {
+        width: 200px; /* Slightly smaller heart size */
+        height: 200pxpx;
+    }
+
+    #heart::before, #heart::after {
+        width: 200px;
+        height: 200px;
+    }
+
+    #heart span {
+        font-size: 35px; /* Adjust text size */
+        padding-bottom: 50px; /* Adjust text positioning */
+    }
+}
+
